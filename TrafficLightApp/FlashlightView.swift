@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct FlashlightView: View {
+    let color: Color
+    var light: Double = 0.5
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Circle()
+            .frame(width: 120, height: 120)
+            .foregroundStyle(color)
+            .opacity(light)
+            .overlay(Circle().stroke(Color.black, lineWidth: 7))
     }
 }
 
 #Preview {
-    FlashlightView()
+    FlashlightView(color: .red)
 }
+
